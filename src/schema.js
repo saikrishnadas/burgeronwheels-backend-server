@@ -3,12 +3,12 @@ const { gql } = require("apollo-server");
 exports.typeDefs = gql`
 	type Query {
 		products: [Product!]!
-		findProduct(id: String!): Product!
+		findProduct(id: String!): Product
 	}
 
 	type Mutation {
 		addProduct(input: AddProductInput!): Product!
-		removeProduct(id: String!): String
+		removeProduct(id: String!): Boolean!
 	}
 
 	type Product {

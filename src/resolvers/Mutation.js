@@ -19,6 +19,6 @@ exports.Mutation = {
 
 	removeProduct: async (parent, { id }, { Product }) => {
 		await Product.deleteOne({ id }); //remove a product from mongodb
-		return id;
+		return true;
 	},
 };
