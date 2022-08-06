@@ -20,6 +20,9 @@ exports.typeDefs = gql`
 		image: String!
 		ingredients: [String]
 		addOns: [String]
+		rating: Float!
+		calories: Int!
+		duration: String!
 	}
 
 	input AddProductInput {
@@ -29,5 +32,8 @@ exports.typeDefs = gql`
 		image: String!
 		ingredients: [String]
 		addOns: [String]
+		rating: Float!
+		calories: Int!
+		duration: String!
 	}
 `;

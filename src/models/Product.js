@@ -21,6 +21,25 @@ const productSchema = new mongoose.Schema({
 	image: {
 		type: String,
 	},
+	ingredients: [
+		{
+			type: String,
+		},
+	],
+	addOns: [
+		{
+			type: String,
+		},
+	],
+	rating: {
+		type: Number,
+	},
+	calories: {
+		type: Number,
+	},
+	duration: {
+		type: String,
+	},
 });
 
 const Product = mongoose.model("product", productSchema);

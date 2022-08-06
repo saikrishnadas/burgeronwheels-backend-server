@@ -3,7 +3,17 @@ const slugify = require("slugify");
 
 exports.Mutation = {
 	addProduct: async (parent, { input }, { Product }) => {
-		const { name, description, price, image } = input;
+		const {
+			name,
+			description,
+			price,
+			image,
+			ingredients,
+			addOns,
+			rating,
+			calories,
+			duration,
+		} = input;
 		const newProduct = new Product({
 			id: uuid(),
 			slug: slugify(name, { lower: true }),
@@ -11,6 +21,11 @@ exports.Mutation = {
 			description,
 			price,
 			image,
+			ingredients,
+			addOns,
+			rating,
+			calories,
+			duration,
 		});
 
 		await newProduct.save(); //save the product to mongoDB
