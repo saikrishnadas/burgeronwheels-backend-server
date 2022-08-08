@@ -33,9 +33,30 @@ exports.Mutation = {
 	},
 
 	updateProduct: async (parent, { input }, { Product }) => {
-		const { id, name, description, price, image, ingredients, addOns } = input;
+		const {
+			id,
+			name,
+			description,
+			price,
+			image,
+			ingredients,
+			addOns,
+			rating,
+			calories,
+			duration,
+		} = input;
 		const filter = { id };
-		const update = { name, description, price, image, ingredients, addOns };
+		const update = {
+			name,
+			description,
+			price,
+			image,
+			ingredients,
+			addOns,
+			rating,
+			calories,
+			duration,
+		};
 		let product = await Product.findOneAndUpdate(filter, update, { new: true });
 		return product;
 	},
