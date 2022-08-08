@@ -9,6 +9,7 @@ exports.typeDefs = gql`
 	type Mutation {
 		addProduct(input: AddProductInput!): Product!
 		removeProduct(id: String!): Boolean!
+		updateProduct(input: UpdateProductInput!): Product
 	}
 
 	type Product {
@@ -35,5 +36,18 @@ exports.typeDefs = gql`
 		rating: Float!
 		calories: Int!
 		duration: String!
+	}
+
+	input UpdateProductInput {
+		id: ID!
+		name: String
+		description: String
+		price: Float
+		image: String
+		ingredients: [String]
+		addOns: [String]
+		rating: Float
+		calories: Int
+		duration: String
 	}
 `;

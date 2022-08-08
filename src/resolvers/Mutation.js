@@ -32,6 +32,14 @@ exports.Mutation = {
 		return newProduct;
 	},
 
+	updateProduct: async (parent, { input }, { Product }) => {
+		const { id, name, description, price, image, ingredients, addOns } = input;
+		const filter = { id };
+		const update = { name, description, price, image, ingredients, addOns };
+		let product = await Product.findOneAndUpdate(filter, update, { new: true });
+		return product;
+	},
+
 	removeProduct: async (parent, { id }, { Product }) => {
 		await Product.deleteOne({ id }); //remove a product from mongodb
 		return true;
