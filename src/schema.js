@@ -8,7 +8,7 @@ exports.typeDefs = gql`
 
 	type Mutation {
 		addProduct(input: AddProductInput!): Product!
-		removeProduct(id: String!): Boolean!
+		removeProduct(id: String!): String
 		updateProduct(input: UpdateProductInput!): Product
 	}
 
