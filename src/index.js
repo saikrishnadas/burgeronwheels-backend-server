@@ -12,7 +12,11 @@ const server = new ApolloServer({
 	context: {
 		Product,
 	},
+	cors: {
+		origin: ["https://calm-heliotrope-536826.netlify.app/"]
+	}
 });
+
 
 //Connect to MongoDB
 dbConnect();
